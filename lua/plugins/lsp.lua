@@ -25,7 +25,7 @@ return {
             { 'williamboman/mason-lspconfig.nvim' },
         },
         opts = {
-            inlay_hint = { enable = true },
+            inlay_hint = { enable = false },
         },
         config = function()
             vim.g.diagnostics_on = false
@@ -58,7 +58,8 @@ return {
 
             local attach = function(_, bufnr)
                 local opts = { buffer = bufnr, remap = false }
-                vim.lsp.inlay_hint.enable(true, nil)
+                vim.lsp.inlay_hint.enable(false)
+
 
                 vim.keymap.set("n", "<Leader>tw", toggle_diagnostics,
                     { desc = "Toggle Warnings", buffer = bufnr, remap = false })
@@ -87,7 +88,11 @@ return {
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'lua_ls',
-		    'jdtls',
+                    'jdtls',
+                    'rust_analyzer',
+                    'gopls',
+                    'clangd',
+                    'basedpyright',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -95,8 +100,8 @@ return {
                         local lua_opts = lsp_zero.nvim_lua_ls({
                             settings = {
                                 Lua = {
-                                    hint = { enable = false},
-				    vim.api.nvim_set_hl(0, 'LspInlayHint', { fg = '#FF7F7F', italic = true })
+                                    hint = { enable = false },
+                                    vim.api.nvim_set_hl(0, 'LspInlayHint', { fg = '#FF7F7F', italic = true })
 
                                 }
                             }
