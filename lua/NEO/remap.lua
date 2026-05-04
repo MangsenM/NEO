@@ -13,3 +13,6 @@ vim.keymap.set ({"n", "v"}, "<leader>y", [["+y]], {desc = "copy+"})
 -- move to end/start of line
 vim.keymap.set ({"n", "v"}, "<c-ä>", "$", {noremap = true, silent = true})
 vim.keymap.set ({"n", "v"}, "<c-å>", "0", {noremap = true, silent = true})
+
+-- diagnostics
+vim.keymap.set("n", "<leader>td", "<cmd>Telescope diagnostics<CR>", { desc = "Telescope diagnostics" })
