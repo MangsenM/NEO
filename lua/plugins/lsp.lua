@@ -93,6 +93,7 @@ return {
                     'gopls',
                     'clangd',
                     'basedpyright',
+                    'hls',
                 },
                 handlers = {
                     lsp_zero.default_setup,

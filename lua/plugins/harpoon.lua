@@ -27,11 +27,5 @@ return {
         vim.keymap.set("n", "<Leader>8", function() ui.nav_file(8) end)
         vim.keymap.set("n", "<Leader>9", function() ui.nav_file(9) end)
         vim.keymap.set("n", "<Leader>0", function() ui.nav_file(10) end)
-
-        vim.api.nvim_set_hl(0, 'HarpoonActive', { fg = '#5c4033', bg = '#FFFDD0', underline = false, bold = true })
-        vim.api.nvim_set_hl(0, 'HarpoonNumberActive', { fg = '#5c4033', bg = '#FFFDD0', underline = false, bold = true })
-        vim.api.nvim_set_hl(0, 'HarpoonInactive', { fg = '#FFFDD0', bg = '#5c4033', underline = false })
-        vim.api.nvim_set_hl(0, 'HarpoonNumberInactive', { fg = '#FFFDD0', bg = '#5c4033', underline = false })
-
     end
 }
